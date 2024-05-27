@@ -458,7 +458,6 @@ require("lazy").setup({
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
 				-- clangd = {},
-				-- gopls = {},
 				-- pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -469,6 +468,12 @@ require("lazy").setup({
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				-- tsserver = {},
 				--
+				gopls = {},
+				templ = {
+					filetypes = {
+						"templ",
+					},
+				},
 				zls = {},
 				lua_ls = {
 					-- cmd = {...},
@@ -805,6 +810,11 @@ require("lazy").setup({
 		},
 	},
 })
-
+-- remove this when you upgrade to nvim 0.10
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
