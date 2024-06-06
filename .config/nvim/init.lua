@@ -283,7 +283,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 			-- requires iTerm2 to remap <D-p> to <M-p>
-			vim.keymap.set("n", "<M-p>", builtin.find_files, { desc = "[S]earch [F]iles" })
+			vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "[S]earch [F]iles" })
 			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
@@ -411,6 +411,8 @@ require("lazy").setup({
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+
+					map("<leader>cl", vim.lsp.codelens.run, "[C]ode [L]ens")
 
 					-- Opens a popup that displays documentation about the word under your cursor
 					--  See `:help K` for why this keymap.

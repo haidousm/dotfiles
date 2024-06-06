@@ -7,7 +7,7 @@ return {
 	opts = function()
 		local metals_config = require("metals").bare_config()
 		metals_config.on_attach = function(client, bufnr)
-			-- your on_attach function
+			require("metals").setup_dap()
 		end
 
 		return metals_config
