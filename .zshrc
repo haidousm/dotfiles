@@ -73,6 +73,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
+tmux
 zsh-autosuggestions
 dirhistory
 jsontools
@@ -107,15 +108,17 @@ alias gpb="git push -u origin \$(git symbolic-ref --short HEAD)"
 alias gen-crt="go run /opt/homebrew/Cellar/go/1.21.5/libexec/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost"
 alias vim=nvim
 alias vi=nvim
+alias kc=kubectl
 
 # Work-specific aliases & env vars -- do not commit to git i beg
-[ -s "${HOME}/.work.zshrc" ] && . "${HOME}"
+[ -s "${HOME}/.work.zshrc" ] && . "${HOME}/.work.zshrc"
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(rbenv init - zsh)"
 
 source <(fzf --zsh)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/fzf-git.sh
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
