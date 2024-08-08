@@ -9,6 +9,18 @@ return {
 		metals_config.on_attach = function(client, bufnr)
 			require("metals").setup_dap()
 		end
+		metals_config.init_options.statusBarProvider = "off"
+		metals_config.find_root_dir = function()
+			return vim.fn.getcwd()
+		end
+
+		metals_config.settings = {
+			autoImportBuild = "all",
+			defaultBspToBuildTool = true,
+			showImplicitArguments = true,
+			showImplicitConversionsAndClasses = true,
+			showInferredType = true,
+		}
 
 		return metals_config
 	end,
