@@ -20,6 +20,10 @@ return {
 			showImplicitArguments = true,
 			showImplicitConversionsAndClasses = true,
 			showInferredType = true,
+			serverProperties = {
+				"-Xss1g",
+				"-Xms2g",
+			},
 		}
 
 		return metals_config
