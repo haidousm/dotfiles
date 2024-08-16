@@ -42,8 +42,6 @@ alias todos="git log -STODO --author='$(git config user.name)' -p | grep TODO"
 [ -s "${HOME}/.work.zshrc" ] && . "${HOME}/.work.zshrc"
 
 eval "$(zoxide init --cmd cd zsh)"
-# TODO: add this to work.zshrc
-# eval "$(rbenv init - zsh)"
 
 source <(fzf --zsh)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
