@@ -3,4 +3,7 @@ return {
 	cmd = {
 		"Git",
 	},
+	dependencies = {
+		"tpope/vim-rhubarb",
+	},
 }
