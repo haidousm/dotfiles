@@ -11,7 +11,7 @@ return {
 		end
 
 		metals_config.init_options.statusBarProvider = "off"
-		metals_config.init_options.disableColorOutput = false
+		-- metals_config.init_options.disableColorOutput = false
 
 		metals_config.find_root_dir = function()
 			return vim.fn.getcwd()
