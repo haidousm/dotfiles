@@ -65,6 +65,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+local hocon_group = vim.api.nvim_create_augroup("hocon", { clear = true })
+vim.api.nvim_create_autocmd(
+	{ "BufNewFile", "BufRead" },
+	{ group = hocon_group, pattern = "*.conf", command = "set ft=hocon" }
+	-- { group = hocon_group, pattern = "*/resources/*.conf", command = "set ft=hocon" }
+)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -271,7 +278,7 @@ require("lazy").setup({
 			},
 		},
 		opts = {
-			notify_on_error = false,
+			notify_on_error = true,
 			format_on_save = nil,
 			formatters_by_ft = {
 				lua = { "stylua" },
