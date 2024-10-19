@@ -57,6 +57,7 @@ install_if_missing nvim neovim
 install_if_missing go go
 install_if_missing fzf fzf
 install_if_missing zoxide zoxide
+install_if_missing tms tms
 
 install_if_missing_with_prompt kubectl kubectl
 

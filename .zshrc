@@ -35,7 +35,7 @@ alias vim=nvim
 alias vi=nvim
 alias kc=kubectl
 alias todos="git log -STODO --author='$(git config user.name)' -p | grep TODO"
-
+alias sbtest="sbt test 2>&1 1>/dev/null"
 
 # Work-specific aliases & env vars -- do not commit to git i beg
 [ -s "${HOME}/.work.zshrc" ] && . "${HOME}/.work.zshrc"
