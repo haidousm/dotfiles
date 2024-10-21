@@ -283,6 +283,15 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 			},
+			formatters = {
+				injected = {
+					options = {
+						lang_to_formatters = {
+							toml = { "taplo" },
+						},
+					},
+				},
+			},
 		},
 	},
 
