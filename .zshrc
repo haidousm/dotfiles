@@ -60,3 +60,4 @@ export PATH="$PATH:/Users/mhaidous/.local/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export PATH="$HOME/.tgenv/bin:$PATH"
