@@ -23,8 +23,10 @@ return {
 			showImplicitConversionsAndClasses = true,
 			showInferredType = true,
 			serverProperties = {
-				"-Xss1g",
-				"-Xms2g",
+				"-Xmx16G",
+				"-Dmetals.loglevel=debug",
+				"-Dmetals.statistics=all",
+				"-Dmetals.enable-best-effort=true",
 			},
 		}
 
