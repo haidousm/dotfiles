@@ -1,4 +1,7 @@
 .git
 setup.sh
+bootstrap.sh
 README.md
 .gitignore
+.gitconfig.local
+.zshrc.local

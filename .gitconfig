@@ -1,0 +1,13 @@
+[user]
+	name = haidousm
+	email = haidous.m@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	precomposeUnicode = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[http]
+	postBuffer = 524288000
