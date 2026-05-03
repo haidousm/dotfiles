@@ -40,7 +40,14 @@ alias sbtest="sbt test 2>&1 1>/dev/null"
 
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init --cmd cd zsh)"
 
-command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
+if command -v fzf >/dev/null 2>&1; then
+    if fzf --zsh >/dev/null 2>&1; then
+        source <(fzf --zsh)
+    elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+        source /usr/share/doc/fzf/examples/key-bindings.zsh
+        [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+    fi
+fi
 [ -s ~/fzf-git.sh ] && source ~/fzf-git.sh
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
