@@ -58,12 +58,17 @@ setup_macos() {
 setup_linux() {
     echo "Installing system packages..."
     apt-get update -qq
-    apt-get install -y git zsh curl wget stow tmux ripgrep fzf
+    apt-get install -y git zsh curl wget stow tmux ripgrep
 
     if ! command_exists zoxide; then
         echo "Installing zoxide..."
         curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
     fi
+
+    echo "Installing fzf (latest)..."
+    FZF_VERSION="$(curl -sSL https://api.github.com/repos/junegunn/fzf/releases/latest | grep '"tag_name"' | cut -d'"' -f4 | sed 's/^v//')"
+    curl -sSfL "https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}/fzf-${FZF_VERSION}-linux_amd64.tar.gz" \
+        | tar -xz -C /usr/local/bin fzf
 }
 
 # ── Common ────────────────────────────────────────────────────────────────────
